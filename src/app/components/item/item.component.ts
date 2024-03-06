@@ -34,33 +34,39 @@ export class ItemComponent implements OnInit{
   addItem(form: NgForm) {
     if (form.value._id) {
       this.itemService.updateItem(form.value).subscribe(
-        (res) => console.log(res),
-        (err) => console.error(err) 
+        (res) => {
+          console.log(res);
+          this.getItems();
+          form.reset();
+          alert("Modificado con Éxito");
+        },
+        (err) => console.error(err),
       );
     } else{
       this.itemService.createItem(form.value).subscribe(
         (res) => {
           this.getItems();
           form.reset();
+          alert("Creado con Éxito");
         },
         (err) => console.error(err)
       );
     }
   }
   deleteItem( _id: string){
-    if (confirm('¿Estás seguro?')) {
       this.itemService.deleteItem(_id).subscribe(
           (res) => {
             this.getItems();
+            alert("Borrado con Éxito");
           },
           (err) =>console.error(err)
           
         );
-    }
   }
 
   updateItem( item: Item){
     this.itemService.selectedItem = item;
+    
   }
 
 }

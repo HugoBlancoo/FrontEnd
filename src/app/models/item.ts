@@ -5,4 +5,9 @@ export interface Item {
     createdAt?: String
     updatedAt?: string
     _id?: string
+    color: string
+    electric: string
+    quantity: number
+    space: string
+    shape?: string
 }

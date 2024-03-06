@@ -2,43 +2,96 @@
     <div class="col-md-4">
         <div class="card">
             <div class="card-body">
-                <form #itemForm="ngForm" (ngSubmit) = "addItem(itemForm)">
+                <form #itemForm="ngForm" (ngSubmit) = "addItem(itemForm)"   >
 
                     <input type="hidden" name="_id" [(ngModel)]="itemService.selectedItem._id">
 
                     <div class="form-group">
+                        
                         <input 
                             type="text" 
                             class="form-control" 
-                            placeholder="Enter your FullName" 
+                            placeholder="Item Name" 
                             name ="name"
                             [(ngModel)] = "itemService.selectedItem.name"
                         />
                     </div>
 
                     <div class="form-group">
+                        Price
                         <input 
                             type="number" 
                             class="form-control" 
-                            placeholder="Enter your price"
+                            placeholder="Item price"
                             name="price"
                             [(ngModel)] = "itemService.selectedItem.price"
                         />
                     </div>
+                    
                     <div class="form-group">
+                        Quantity
                         <input 
-                            type="text" 
+                            type="number" 
                             class="form-control" 
-                            placeholder="Enter your size"
-                            name ="size"
-                            [(ngModel)] = "itemService.selectedItem.size"
+                            placeholder="Item quantity"
+                            name="quantity"
+                            [(ngModel)] = "itemService.selectedItem.quantity"
                         />
                     </div>
 
-                    <button class="btn btn-primary mr-2" (click)="resetForm(itemForm)">
-                        Clean
-                    </button>
-                    
+                    <div class="form-group">
+                        <br>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            placeholder="Item size"
+                            name ="size"
+                            [(ngModel)] = "itemService.selectedItem.size"
+                        />
+                    </div>        
+                    <div class="form-group">
+                        <br>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            placeholder="Item color"
+                            name ="color"
+                            [(ngModel)] = "itemService.selectedItem.color"
+                        />
+                    </div>  
+
+                    <div class="form-group">
+                        <br>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            placeholder="Item shape"
+                            name ="shape"
+                            [(ngModel)] = "itemService.selectedItem.shape"
+                        />
+                    </div>  
+
+                    <div class="form-group">
+                        <br>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            placeholder="Space"
+                            name ="space"
+                            [(ngModel)] = "itemService.selectedItem.space"
+                        />
+                    </div>  
+
+                    <div class="form-group">
+                        <br>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            placeholder="Electric(yes/no)"
+                            name ="electric"
+                            [(ngModel)] = "itemService.selectedItem.electric"
+                        />
+                    </div>                
                     <button class="btn btn-secondary">
                         Save
                     </button>
@@ -51,17 +104,29 @@
         <table class="table table-striped">
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Name</th>
                     <th>Price</th>
+                    <th>Quantity</th>
                     <th>Size</th>
-                    <th>Operations</th>
+                    <th>Color</th>
+                    <th>Shape</th>
+                    <th>Space</th>
+                    <th>Electric</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let item of itemService.items">
+                    <td>{{ item._id }}</td>
                     <td>{{ item.name }}</td>
                     <td>{{ item.price }}</td>
+                    <td>{{ item.quantity }}</td>
                     <td>{{ item.size }}</td>
+                    <td>{{ item.color }}</td>
+                    <td>{{ item.shape }}</td>
+                    <td>{{ item.space }}</td>
+                    <td>{{ item.electric }}</td>
                     <td>
                         <button class="btn btn-secondary btn-sm" (click)="updateItem(item)">
                             <i class="material-icons">edit</i>
@@ -74,4 +139,6 @@
             </tbody>
         </table>
     </div>
+
+
 </div>

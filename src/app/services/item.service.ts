@@ -12,6 +12,11 @@ export class ItemService {
     name: '',
     price: 0,
     size: '',
+    color: '',
+    electric:'',
+    quantity: 0,
+    shape: '',
+    space: ''
   }
   items: Item[] = [];
 
@@ -31,5 +36,8 @@ export class ItemService {
 
   updateItem(item: Item){
     return this.http.put(`${this.URL_API}/${item._id}`, item)
+  }
+  searchItem(_id: string){
+    
   }
 }
