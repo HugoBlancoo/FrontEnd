@@ -16,14 +16,20 @@ export class ItemService {
     electric:'',
     quantity: 0,
     shape: '',
-    space: ''
+    space: '',
+    //_id:''
   }
+  
   items: Item[] = [];
 
   constructor(private http: HttpClient) { }
 
   getItems() {
     return this.http.get<Item[]>(this.URL_API);
+  }
+
+  getItem(_id: string){
+    return this.http.get<Item[]>(`${this.URL_API}/${_id}`);
   }
 
   createItem(item: Item){
