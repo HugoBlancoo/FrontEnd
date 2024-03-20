@@ -109,7 +109,14 @@
         </div>
     </div>
     <br>
-    
+    <div class="card">
+        <div class="card-body">
+            <label for="filterByPrice">Filter By Price</label>
+            <input type="text" id="filterByPrice" class="form-control" [(ngModel)]="filterByPrice">
+            <button class="btn btn-secondary" (click)="getItemByPrice(filterByPrice)">Filter</button>
+        </div>
+    </div>
+    <br>
     <div class="col-md-8">
         <table class="table table-striped">
             <thead>
@@ -127,7 +134,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let item of filteredItems">
+                <tr *ngFor="let item of filteredItems.length ? filteredItems : itemService.items">
                     <td>{{ item._id }}</td>
                     <td>{{ item.name }}</td>
                     <td>{{ item.price }}</td>

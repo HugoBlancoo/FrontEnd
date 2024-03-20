@@ -10,11 +10,11 @@ export class ItemService {
 
   selectedItem: Item = {
     name: '',
-    price: 0,
+    price: NaN,
     size: '',
     color: '',
     electric:'',
-    quantity: 0,
+    quantity: NaN,
     shape: '',
     space: '',
     //_id:''
@@ -30,6 +30,10 @@ export class ItemService {
 
   getItem(_id: string){
     return this.http.get<Item[]>(`${this.URL_API}/${_id}`);
+  }
+
+  getItemByPrice(price: string){
+    return this.http.get<Item[]>(`${this.URL_API}/price/${price}`);
   }
 
   createItem(item: Item){
