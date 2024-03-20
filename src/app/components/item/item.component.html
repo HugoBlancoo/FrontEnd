@@ -101,15 +101,15 @@
         </div>
     </div>
     <!--Carta de busqueda-->
-    <div class="card">
+    <div class="col-md-4">
         <div class="card-body">
             <label for="filterById">Filter By Id</label>
             <input type="text" id="filterById" class="form-control" [(ngModel)]="filterById">
             <button class="btn btn-secondary" (click)="getItem(filterById)">Filter</button>
         </div>
     </div>
-    <br>
-    <div class="card">
+
+    <div class="col-md-4">
         <div class="card-body">
             <label for="filterByPrice">Filter By Price</label>
             <input type="text" id="filterByPrice" class="form-control" [(ngModel)]="filterByPrice">
