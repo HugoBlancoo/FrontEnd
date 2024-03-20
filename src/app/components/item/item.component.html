@@ -101,7 +101,7 @@
         </div>
     </div>
     <!--Carta de busqueda-->
-    <div class="col-md-4">
+    <div class="col-md-2">
         <div class="card-body">
             <label for="filterById">Filter By Id</label>
             <input type="text" id="filterById" class="form-control" [(ngModel)]="filterById">
@@ -109,13 +109,22 @@
         </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-2">
         <div class="card-body">
             <label for="filterByPrice">Filter By Price</label>
             <input type="text" id="filterByPrice" class="form-control" [(ngModel)]="filterByPrice">
             <button class="btn btn-secondary" (click)="getItemByPrice(filterByPrice)">Filter</button>
         </div>
     </div>
+
+    <div class="col-md-2">
+        <div class="card-body">
+            <label for="filterByColor">Filter By Color</label>
+            <input type="text" id="filterByColor" class="form-control" [(ngModel)]="filterByColor">
+            <button class="btn btn-secondary" (click)="getItemByColor(filterByColor)">Filter</button>
+        </div>
+    </div>
+
     <br>
     <div class="col-md-8">
         <table class="table table-striped">

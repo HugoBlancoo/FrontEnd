@@ -36,6 +36,10 @@ export class ItemService {
     return this.http.get<Item[]>(`${this.URL_API}/price/${price}`);
   }
 
+  getItemByColor(color: string) {
+    return this.http.get<Item[]>(`${this.URL_API}/color/${color}`);
+  }
+
   createItem(item: Item){
     return this.http.post(this.URL_API, item);
   }

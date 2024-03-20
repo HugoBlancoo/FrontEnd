@@ -15,6 +15,7 @@ export class ItemComponent implements OnInit{
   
   filterById: string = '';
   filterByPrice: string = '';
+  filterByColor: string = '';
   filteredItems: Item[] = [];
 
   ngOnInit(): void {
@@ -69,6 +70,19 @@ export class ItemComponent implements OnInit{
       (err) => console.error(err)
     );
   }
+
+  getItemByColor(color: string){
+    this.itemService.getItemByColor(color).subscribe(
+      (res) => {
+        if (Array.isArray(res)) {
+          this.filteredItems = res;
+        } else {
+          this.filteredItems = [res];
+        }
+      }
+    )
+  }
+
 
   addItem(form: NgForm) {
     if (form.value._id) {
