@@ -55,7 +55,12 @@ export class ItemComponent implements OnInit{
   }
   
   getItemByPrice(price: string){
+    if (!price || price.trim() === '') {
+      this.getItems();
+      return; // Evita realizar la llamada al backend
+   }
     this.itemService.getItemByPrice(price).subscribe(
+      
       (res) => {//NO DEJABA TENER RES ENTRE CORCHETES PORQUE TYPSCRIPT NO SE FIA Y ENTONCES O HACES UN IF QUE LO COMRPUEBE O NO DEJA OS LO DEJO AQUI ANOTADO BABY GRU GRU
         
         if (Array.isArray(res)) {
@@ -72,6 +77,10 @@ export class ItemComponent implements OnInit{
   }
 
   getItemByColor(color: string){
+    if (!color || color.trim() === '') {
+      this.getItems();
+      return; // Evita realizar la llamada al backend
+   }
     this.itemService.getItemByColor(color).subscribe(
       (res) => {
         if (Array.isArray(res)) {
