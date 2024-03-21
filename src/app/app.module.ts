@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { ItemComponent } from './components/item/item.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms'
+import { RequiredNumberValidatorDirective } from './directives/required-number.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ItemComponent
+    ItemComponent,
+    RequiredNumberValidatorDirective
   ],
   imports: [
     BrowserModule,

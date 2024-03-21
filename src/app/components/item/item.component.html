@@ -24,7 +24,7 @@
                             class="form-control" 
                             placeholder="Item price"
                             name="price"
-                            [(ngModel)] = "itemService.selectedItem.price"
+                            [(ngModel)] = "itemService.selectedItem.price" requiredNumber
                         />
                     </div>
                     
@@ -35,7 +35,7 @@
                             class="form-control" 
                             placeholder="Item quantity"
                             name="quantity"
-                            [(ngModel)] = "itemService.selectedItem.quantity"
+                            [(ngModel)] = "itemService.selectedItem.quantity" requiredNumber
                         />
                     </div>
 
@@ -92,7 +92,7 @@
                             [(ngModel)] = "itemService.selectedItem.electric"
                         />
                     </div>                
-                    <button class="btn btn-secondary">
+                    <button class="btn btn-secondary"[disabled]="itemForm.invalid">
                         Save
                     </button>
 

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'; 
 import { Item } from '../models/item';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -41,6 +43,7 @@ export class ItemService {
   }
 
   createItem(item: Item){
+    console.log(item);
     return this.http.post(this.URL_API, item);
   }
   
