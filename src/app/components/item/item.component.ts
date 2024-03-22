@@ -50,7 +50,15 @@ export class ItemComponent implements OnInit{
         }
         console.log(this.filteredItems);
       },
-      (err) => console.error(err)
+      (err) => {
+        console.error(err);
+        // Comprobar si el error es un error 500
+        if (err.status === 500) {
+          console.log('Error 500:', err);
+          this.filteredItems = [];
+          console.log(this.filteredItems);
+        }
+      }
     );
   }
   

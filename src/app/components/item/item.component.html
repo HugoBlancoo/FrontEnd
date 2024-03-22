@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="form-group">
-                        Price
+                        <br>                        
                         <input 
                             type="number" 
                             class="form-control" 
@@ -29,7 +29,7 @@
                     </div>
                     
                     <div class="form-group">
-                        Quantity
+                        <br>                        
                         <input 
                             type="number" 
                             class="form-control" 
@@ -143,7 +143,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let item of filteredItems.length ? filteredItems : itemService.items">
+                <tr *ngFor="let item of filteredItems">
                     <td>{{ item._id }}</td>
                     <td>{{ item.name }}</td>
                     <td>{{ item.price }}</td>
